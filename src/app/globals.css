@@ -29,6 +29,13 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --accent-color-1: #3B82F6; /* blue-500 */
+    --accent-color-2: #10B981; /* emerald-500 */
+    --accent-color-3: #F59E0B; /* amber-500 */
+    --accent-color-4: #EC4899; /* pink-500 */
+    --accent-color-5: #8B5CF6; /* purple-500 */
+    --heading-gradient-from: #3B82F6; /* blue-500 */
+    --heading-gradient-to: #10B981; /* emerald-500 */
   }
 
   .dark {
@@ -56,6 +63,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --heading-gradient-from: #60A5FA; /* blue-400 */
+    --heading-gradient-to: #34D399; /* emerald-400 */
   }
 }
 
@@ -65,5 +74,50 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .service-card,
+  .case-study-card {
+    @apply relative p-6 rounded-lg transition-all duration-300 ease-in-out overflow-hidden bg-white dark:bg-gray-800;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .service-card::before,
+  .case-study-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover,
+  .case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-card:hover::before,
+  .case-study-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .case-study-image {
+    @apply w-full h-48 object-cover mb-4 rounded-t-lg;
+  }
+
+  .section-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold mb-6;
+    background: linear-gradient(135deg, var(--heading-gradient-from), var(--heading-gradient-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 }

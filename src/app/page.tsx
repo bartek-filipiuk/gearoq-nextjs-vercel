@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Gearoq } from "@/components/gearoq";
 
 export default function Home() {

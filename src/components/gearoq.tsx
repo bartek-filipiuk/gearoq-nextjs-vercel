@@ -25,6 +25,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { FaRocket, FaCog, FaChartLine, FaMoneyBillWave, FaCheckCircle, FaLightbulb, FaDatabase, FaUserFriends } from 'react-icons/fa';
 
 export function Gearoq() {
   return (
@@ -38,125 +39,160 @@ export function Gearoq() {
               prefetch={false}
             >
               <LogInIcon className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold text-white">GEAROQ</span>
+              <span className="text-lg font-semibold text-white">GEAROQ Automatyzacje</span>
             </Link>
             <nav className="hidden md:flex items-center gap-4">
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Services
+                O nas
               </Link>
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Case Studies
-              </Link>
-              <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                About
-              </Link>
-              <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Contact
+                Kontakt
               </Link>
             </nav>
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white">Get a Quote</Button>
+            <Link href="/contact" passHref>
+              <Button className="bg-blue-500 hover:bg-blue-600 text-white">Napisz do mnie</Button>
+            </Link>
           </div>
         </header>
         <main>
-          <section className="py-16 md:py-24 flex items-center justify-center">
+          <section className="header-text py-16 md:py-24 flex items-center justify-center">
             <div className="container mx-auto px-8 md:px-12">
               <div className="text-center max-w-3xl mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ADD8E6] to-[#1E90FF] bg-clip-text text-transparent mb-4">
-                  Unlock the Power of Automation
+                <h1 className="title text-[3rem] font-bold bg-gradient-to-r from-[#ADD8E6] to-[#1E90FF] bg-clip-text text-transparent mb-4 leading-[1.5]">
+                  Odkryj moc automatyzacji
                 </h1>
                 <p className="text-lg md:text-xl mb-8 text-white">
-                  Our agency specializes in transforming your business through innovative automation solutions.
+                  Wdrażam pomysły na automatyzację w biznesie i życiu codziennym. Oparte są na narzędziach AI oraz autorskich rozwiązaniach.
                 </p>
-                <Button variant="secondary" className="bg-blue-500 hover:bg-blue-600 text-white">
-                  Explore Our Services
-                </Button>
+                <Link href="/contact" passHref>
+                  <Button variant="secondary" className="bg-blue-500 hover:bg-blue-600 text-white">
+                    Masz pomysł na automatyzację? Napisz do mnie!
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+          <section className="py-12">
+            <h2 className="section-heading">Zalety automatyzacji opartych na AI</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaRocket className="service-icon text-5xl text-blue-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Szybka dostawa</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Wykonanie automatyzacji liczone jest w dniach a nie miesiącach. Oczywiście zależy to od złożoności projektu. Sprawdź case studies i zobacz
+                  ile czasu zajmuje wykonanie konkretnego projektu.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaCog className="service-icon text-5xl text-green-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Personalizacja</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Każdy biznes jest inny, a automatyzacja musi być dostosowana do specyfiki danego biznesu. 
+                  Uniwersalne rozwiązania często nie spełniają unikalnych potrzeb różnych firm. 
+                  Dlatego do każdego projektu trzeba podejść indywidualnie, analizując specyficzne wymagania i cele biznesowe.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaChartLine className="service-icon text-5xl text-yellow-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Zwiększenie efektywności</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Automatyzacja oparta na AI pozwala firmom wykonywać zadania szybciej i bardziej precyzyjnie. Rutynowe procesy są realizowane bez przerw i błędów, co znacząco podnosi ogólną wydajność organizacji.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaMoneyBillWave className="service-icon text-5xl text-red-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Redukcja kosztów</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Wdrażanie AI w procesach biznesowych pomaga obniżyć koszty operacyjne poprzez eliminację potrzeby ręcznego wykonywania wielu zadań, prowadząc do oszczędności finansowych.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaCheckCircle className="service-icon text-5xl text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Dokładność</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Systemy oparte na AI charakteryzują się wysoką precyzją, co znacząco redukuje ryzyko popełniania błędów. Zapewnia to spójność w realizacji procesów i wyższą jakość produktów i usług.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaLightbulb className="service-icon text-5xl text-orange-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Uwolnienie potencjału</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Automatyzacja rutynowych zadań pozwala pracownikom skupić się na bardziej złożonych i strategicznych działaniach, zwiększając innowacyjność i rozwój firmy.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaDatabase className="service-icon text-5xl text-indigo-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Analiza danych</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  AI umożliwia szybkie i efektywne przetwarzanie ogromnych ilości danych, co pozwala firmom na podejmowanie decyzji na podstawie dokładnych analiz i uzyskiwanie przewagi konkurencyjnej.
+                </p>
+              </div>
+              <div className="service-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="flex justify-center mb-4">
+                  <FaUserFriends className="service-icon text-5xl text-pink-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center text-white">Lepsza obsługa klienta</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Automatyzacja z wykorzystaniem AI pozwala na bardziej efektywną i spersonalizowaną obsługę klienta, zwiększając satysfakcję i lojalność wobec marki.
+                </p>
               </div>
             </div>
           </section>
           <section className="py-16 md:py-24">
-            <div className="container mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Services</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-[#333] p-6 rounded-lg">
-                  <WorkflowIcon className="h-8 w-8 mb-4 text-blue-500" />
-                  <h3 className="text-xl font-semibold mb-2 text-white">Process Automation</h3>
-                  <p className="text-muted-foreground mb-4 text-white">
-                    Streamline your business operations with our advanced process automation solutions.
-                  </p>
-                  <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
-                </div>
-                <div className="bg-[#333] p-6 rounded-lg">
-                  <WorkflowIcon className="h-8 w-8 mb-4 text-blue-500" />
-                  <h3 className="text-xl font-semibold mb-2 text-white">Workflow Optimization</h3>
-                  <p className="text-muted-foreground mb-4 text-white">
-                    Optimize your workflows and increase efficiency with our innovative solutions.
-                  </p>
-                  <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
-                </div>
-                <div className="bg-[#333] p-6 rounded-lg">
-                  <XIcon className="h-8 w-8 mb-4 text-blue-500" />
-                  <h3 className="text-xl font-semibold mb-2 text-white">AI-Powered Solutions</h3>
-                  <p className="text-muted-foreground mb-4 text-white">
-                    Leverage the power of AI to drive innovation and transformation in your business.
-                  </p>
-                  <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
-                </div>
-              </div>
+            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+              <h2 className="section-heading">Studia przypadków</h2>
             </div>
-          </section>
-          <section className="py-16 md:py-24">
-          <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Case Studies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-[#333] p-6 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
                 <img
-                  src="/placeholder.svg"
-                  width={400}
-                  height={225}
-                  alt="Case Study 1"
-                  className="rounded-lg mb-4 w-full h-auto"
-                  style={{ aspectRatio: "400/225", objectFit: "cover" }}
+                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
+                  src="path/to/your/image1.jpg"
+                  alt="Studium przypadku 1"
                 />
-                <WorkflowIcon className="h-8 w-8 mb-4 text-blue-500" />
-                <h3 className="text-xl font-semibold mb-2 text-white">Process Automation</h3>
-                <p className="text-muted-foreground mb-4 text-white">
-                  Streamline your business operations with our advanced process automation solutions.
+                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 1</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Krótki opis projektu i jego rezultatów.
                 </p>
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
+                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
               </div>
-              <div className="bg-[#333] p-6 rounded-lg">
+              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
                 <img
-                  src="/placeholder.svg"
-                  width={400}
-                  height={225}
-                  alt="Case Study 2"
-                  className="rounded-lg mb-4 w-full h-auto"
-                  style={{ aspectRatio: "400/225", objectFit: "cover" }}
+                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
+                  src="path/to/your/image2.jpg"
+                  alt="Studium przypadku 2"
                 />
-                <WorkflowIcon className="h-8 w-8 mb-4 text-blue-500" />
-                <h3 className="text-xl font-semibold mb-2 text-white">Workflow Optimization</h3>
-                <p className="text-muted-foreground mb-4 text-white">
-                  Optimize your workflows and increase efficiency with our innovative solutions.
+                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 2</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Krótki opis projektu i jego rezultatów.
                 </p>
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
+                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
               </div>
-              <div className="bg-[#333] p-6 rounded-lg">
+              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
                 <img
-                  src="/placeholder.svg"
-                  width={400}
-                  height={225}
-                  alt="Case Study 3"
-                  className="rounded-lg mb-4 w-full h-auto"
-                  style={{ aspectRatio: "400/225", objectFit: "cover" }}
+                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
+                  src="path/to/your/image3.jpg"
+                  alt="Studium przypadku 3"
                 />
-                <WorkflowIcon className="h-8 w-8 mb-4 text-blue-500" />
-                <h3 className="text-xl font-semibold mb-2 text-white">AI-Powered Solutions</h3>
-                <p className="text-muted-foreground mb-4 text-white">
-                  Leverage the power of AI to drive innovation and transformation in your business.
+                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 3</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Krótki opis projektu i jego rezultatów.
                 </p>
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white">Learn More</Button>
+                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
               </div>
-            </div>
             </div>
           </section>
         </main>
@@ -164,20 +200,20 @@ export function Gearoq() {
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <LogInIcon className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold text-white">Automation Agency</span>
+              <span className="text-lg font-semibold text-white">GEAROQ Automatyzacje</span>
             </div>
             <nav className="flex items-center gap-4">
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Services
+                Usługi
               </Link>
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Case Studies
+                Studia przypadków
               </Link>
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                About
+                O nas
               </Link>
               <Link href="#" className="text-sm font-medium text-white hover:underline" prefetch={false}>
-                Contact
+                Kontakt
               </Link>
             </nav>
           </div>
@@ -187,7 +223,7 @@ export function Gearoq() {
   )
 }
 
-function LogInIcon(props) {
+function LogInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -208,7 +244,9 @@ function LogInIcon(props) {
   )
 }
 
-function WorkflowIcon(props) {
+// Remove or comment out unused icon components
+/*
+function WorkflowIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -229,7 +267,7 @@ function WorkflowIcon(props) {
   )
 }
 
-function XIcon(props) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -248,3 +286,4 @@ function XIcon(props) {
     </svg>
   )
 }
+*/
