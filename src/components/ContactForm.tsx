@@ -22,19 +22,32 @@ declare global {
 
 const ContactForm: React.FC = () => {
   const [subject, setSubject] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [honeypot, setHoneypot] = useState(''); // Nowe pole honeypot
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errors, setErrors] = useState<{ subject?: string; message?: string }>({});
+  const [errors, setErrors] = useState<{ subject?: string; name?: string; phone?: string; email?: string; message?: string }>({});
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const lastSubmitTime = useRef<number>(0);
 
   const validateForm = () => {
-    const newErrors: { subject?: string; message?: string } = {};
+    const newErrors: { subject?: string; name?: string; phone?: string; email?: string; message?: string } = {};
     
     if (!subject) {
       newErrors.subject = 'Proszę wybrać temat';
+    }
+
+    if (!name.trim()) {
+      newErrors.name = 'Proszę podać imię';
+    }
+
+    if (!email.trim()) {
+      newErrors.email = 'Proszę podać adres email';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Proszę podać prawidłowy adres email';
     }
 
     if (!message.trim()) {
@@ -92,12 +105,15 @@ const ContactForm: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ subject, message: sanitizedMessage, recaptchaToken: token }),
+        body: JSON.stringify({ subject, name, phone, email, message: sanitizedMessage, recaptchaToken: token }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setSubject('');
+        setName('');
+        setPhone('');
+        setEmail('');
         setMessage('');
         lastSubmitTime.current = Date.now();
       } else {
@@ -132,7 +148,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
 
-        {/* Pozostałe pola formularza */}
+        {/* Subject field */}
         <div className="mb-6">
           <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
             Temat
@@ -152,6 +168,59 @@ const ContactForm: React.FC = () => {
           </select>
           {errors.subject && <p className="mt-1 text-red-500 text-sm">{errors.subject}</p>}
         </div>
+
+        {/* Name field */}
+        <div className="mb-6">
+          <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+            Imię
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className={`w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'border-red-500' : ''}`}
+            required
+          />
+          {errors.name && <p className="mt-1 text-red-500 text-sm">{errors.name}</p>}
+        </div>
+
+        {/* Email field */}
+        <div className="mb-6">
+          <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+            Adres email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={`w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : ''}`}
+            required
+          />
+          {errors.email && <p className="mt-1 text-red-500 text-sm">{errors.email}</p>}
+        </div>
+
+        {/* Phone field */}
+        <div className="mb-6">
+          <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+            Numer telefonu (opcjonalnie)
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className={`w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.phone ? 'border-red-500' : ''}`}
+            placeholder="+48XXXXXXXXX"
+          />
+          {errors.phone && <p className="mt-1 text-red-500 text-sm">{errors.phone}</p>}
+        </div>
+
+        {/* Message field */}
         <div className="mb-6">
           <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
             Wiadomość
