@@ -4,11 +4,11 @@ import dynamic from 'next/dynamic'
 import Header from "@/components/Header"
 import { Footer } from "@/components/Footer"
 
-const ContactForm = dynamic(() => import('@/components/ContactForm'), { ssr: false })
+const Gearoq = dynamic(() => import('@/components/gearoq'), { ssr: false })
 
 export default function ContactPage() {
   return (
-    <div className="dark:bg-muted dark:text-foreground bg-black">
+    <div className="bg-black text-foreground">
       <div className="container mx-auto px-6 md:px-8">
         <Header />
 
@@ -24,7 +24,7 @@ export default function ContactPage() {
           </section>
           <section className="py-12">
             <div className="container mx-auto px-6 md:px-8">
-              <ContactForm />
+              <Gearoq />
             </div>
           </section>
         </main>

@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import Script from 'next/script';
+import { useRouter } from 'next/navigation';
 
 const WEBHOOK_URL = 'https://hook.eu2.make.com/el8vg2h1rdgkfwowj34ty57fp27wwek0';
 const RECAPTCHA_SITE_KEY = '6LekVFkqAAAAADHNxX_iSsJbOL9cLLbg8aRU1y_A';
@@ -20,7 +21,11 @@ declare global {
   }
 }
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  initialSource: string;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ initialSource }) => {
   const [subject, setSubject] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -32,6 +37,12 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<{ subject?: string; name?: string; phone?: string; email?: string; message?: string }>({});
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const lastSubmitTime = useRef<number>(0);
+  const [source, setSource] = useState(initialSource);
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(`ContactForm initialized with source: ${source}`);
+  }, [source]);
 
   const validateForm = () => {
     const newErrors: { subject?: string; name?: string; phone?: string; email?: string; message?: string } = {};
@@ -100,15 +111,28 @@ const ContactForm: React.FC = () => {
       
       const sanitizedMessage = sanitizeInput(message);
       
+      const formData = {
+        subject,
+        name,
+        phone,
+        email,
+        message: sanitizedMessage,
+        recaptchaToken: token,
+        source
+      };
+
+      console.log('Submitting form data:', formData);
+
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ subject, name, phone, email, message: sanitizedMessage, recaptchaToken: token }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
+        console.log('Form submitted successfully');
         setSubmitStatus('success');
         setSubject('');
         setName('');
@@ -117,6 +141,7 @@ const ContactForm: React.FC = () => {
         setMessage('');
         lastSubmitTime.current = Date.now();
       } else {
+        console.error('Form submission failed:', await response.text());
         setSubmitStatus('error');
       }
     } catch (error) {
@@ -134,6 +159,9 @@ const ContactForm: React.FC = () => {
         onLoad={() => setRecaptchaLoaded(true)}
       />
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+        {/* Add hidden input for source */}
+        <input type="hidden" name="source" value={source} />
+        
         {/* Pole honeypot - ukryte dla użytkowników, ale widoczne dla botów */}
         <div style={{display: 'none'}}>
           <label htmlFor="honeypot">Leave this field empty</label>
