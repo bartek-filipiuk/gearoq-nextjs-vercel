@@ -1,6 +1,4 @@
-import dynamic from 'next/dynamic'
-
-const Gearoq = dynamic(() => import('@/components/gearoq'), { ssr: false })
+import { Gearoq } from "@/components/gearoq";
 
 export default function Home() {
   return (
