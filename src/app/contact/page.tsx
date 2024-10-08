@@ -1,7 +1,5 @@
 'use client'
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import dynamic from 'next/dynamic'
 import Header from "@/components/Header"
 import { Footer } from "@/components/Footer"
