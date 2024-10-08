@@ -3,7 +3,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import Script from 'next/script';
-import { useRouter } from 'next/navigation';
 
 const WEBHOOK_URL = 'https://hook.eu2.make.com/el8vg2h1rdgkfwowj34ty57fp27wwek0';
 const RECAPTCHA_SITE_KEY = '6LekVFkqAAAAADHNxX_iSsJbOL9cLLbg8aRU1y_A';
@@ -37,8 +36,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ initialSource }) => {
   const [errors, setErrors] = useState<{ subject?: string; name?: string; phone?: string; email?: string; message?: string }>({});
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const lastSubmitTime = useRef<number>(0);
-  const [source, setSource] = useState(initialSource);
-  const router = useRouter();
+  const [source] = useState(initialSource);
 
   useEffect(() => {
     console.log(`ContactForm initialized with source: ${source}`);
