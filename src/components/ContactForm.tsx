@@ -39,6 +39,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ initialSource }) => {
   const [source] = useState(initialSource);
 
   useEffect(() => {
+    console.log('ContactForm mounted');
+    return () => {
+      console.log('ContactForm unmounted');
+    };
+  }, []);
+
+  useEffect(() => {
     console.log(`ContactForm initialized with source: ${source}`);
   }, [source]);
 
@@ -78,6 +85,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ initialSource }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('handleSubmit called', { subject, name, email, message });
+    
     if (!validateForm()) return;
     if (!recaptchaLoaded) {
       setSubmitStatus('error');
