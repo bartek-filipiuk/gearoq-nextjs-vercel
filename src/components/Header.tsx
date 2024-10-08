@@ -37,7 +37,7 @@ const Header = () => {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="#" className="text-lg font-medium text-white hover:underline" prefetch={false}>
+          <Link href="/about" className="text-lg font-medium text-white hover:underline" prefetch={false}>
             O nas
           </Link>
           <Link href="https://twitter.com/youraccount" className="text-white hover:text-blue-400" target="_blank" rel="noopener noreferrer">
@@ -67,7 +67,7 @@ const Header = () => {
         >
           <div className="flex flex-col h-full">
             <nav className="flex flex-col gap-6 mb-auto">
-              <Link href="#" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
+              <Link href="/about" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
                 O nas
               </Link>
               <Link href="/contact" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
