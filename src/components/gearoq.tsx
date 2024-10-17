@@ -134,49 +134,49 @@ export function Gearoq() {
               </div>
             </div>
           </section>
-          <section className="py-16 md:py-24">
-            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
-              <h2 className="section-heading">Studia przypadków</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                <img
-                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
-                  src="path/to/your/image1.jpg"
-                  alt="Studium przypadku 1"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 1</h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  Krótki opis projektu i jego rezultatów.
-                </p>
-                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
-              </div>
-              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                <img
-                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
-                  src="path/to/your/image2.jpg"
-                  alt="Studium przypadku 2"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 2</h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  Krótki opis projektu i jego rezultatów.
-                </p>
-                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
-              </div>
-              <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">
-                <img
-                  className="case-study-image w-full h-48 object-cover rounded-lg mb-4"
-                  src="path/to/your/image3.jpg"
-                  alt="Studium przypadku 3"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 3</h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  Krótki opis projektu i jego rezultatów.
-                </p>
-                <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>
-              </div>
-            </div>
-          </section>
+          {/*<section className="py-16 md:py-24">*/}
+          {/*  <div className="w-full lg:w-1/2 mb-6 lg:mb-0">*/}
+          {/*    <h2 className="section-heading">Studia przypadków</h2>*/}
+          {/*  </div>*/}
+          {/*  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">*/}
+          {/*    <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">*/}
+          {/*      <img*/}
+          {/*        className="case-study-image w-full h-48 object-cover rounded-lg mb-4"*/}
+          {/*        src="path/to/your/image1.jpg"*/}
+          {/*        alt="Studium przypadku 1"*/}
+          {/*      />*/}
+          {/*      <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 1</h3>*/}
+          {/*      <p className="text-sm text-gray-300 mb-4">*/}
+          {/*        Krótki opis projektu i jego rezultatów.*/}
+          {/*      </p>*/}
+          {/*      <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>*/}
+          {/*    </div>*/}
+          {/*    <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">*/}
+          {/*      <img*/}
+          {/*        className="case-study-image w-full h-48 object-cover rounded-lg mb-4"*/}
+          {/*        src="path/to/your/image2.jpg"*/}
+          {/*        alt="Studium przypadku 2"*/}
+          {/*      />*/}
+          {/*      <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 2</h3>*/}
+          {/*      <p className="text-sm text-gray-300 mb-4">*/}
+          {/*        Krótki opis projektu i jego rezultatów.*/}
+          {/*      </p>*/}
+          {/*      <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>*/}
+          {/*    </div>*/}
+          {/*    <div className="case-study-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transition-transform hover:scale-105">*/}
+          {/*      <img*/}
+          {/*        className="case-study-image w-full h-48 object-cover rounded-lg mb-4"*/}
+          {/*        src="path/to/your/image3.jpg"*/}
+          {/*        alt="Studium przypadku 3"*/}
+          {/*      />*/}
+          {/*      <h3 className="text-xl font-semibold mb-2 text-white">Nazwa projektu 3</h3>*/}
+          {/*      <p className="text-sm text-gray-300 mb-4">*/}
+          {/*        Krótki opis projektu i jego rezultatów.*/}
+          {/*      </p>*/}
+          {/*      <a href="#" className="text-blue-400 hover:underline">Czytaj więcej</a>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</section>*/}
         </main>
         <Footer />
       </div>
