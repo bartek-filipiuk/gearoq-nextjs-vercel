@@ -37,20 +37,34 @@ export function Gearoq() {
       <div className="container mx-auto px-6 md:px-8">
         <Header />
         <main>
-          <section className="header-text py-16 md:py-24 flex items-center justify-center">
+          <section className="header-text py-16 md:py-24">
             <div className="container mx-auto px-8 md:px-12">
-              <div className="text-center max-w-3xl mx-auto">
-                <h1 className="title text-[3rem] font-bold bg-gradient-to-r from-[#ADD8E6] to-[#1E90FF] bg-clip-text text-transparent mb-4 leading-[1.5]">
-                  Odkryj moc automatyzacji
+              <div className="max-w-3xl mx-auto">
+                <h1 className="title text-[3rem] font-bold bg-gradient-to-r from-[#ADD8E6] to-[#1E90FF] bg-clip-text text-transparent mb-4 leading-[1.5] text-center">
+                  Open Business Automations
                 </h1>
-                <p className="text-lg md:text-xl mb-8 text-white">
-                  Wdrażam pomysły na automatyzację w biznesie i życiu codziennym. Oparte są na narzędziach AI oraz autorskich rozwiązaniach.
-                </p>
-                <Link href="/contact" passHref>
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
-                    Masz pomysł na automatyzację? Napisz do mnie!
-                  </button>
-                </Link>
+                
+                <h2 className="text-2xl font-semibold text-blue-400 mb-6 mt-12">Nasza wizja</h2>
+                
+                <div className="space-y-6 font-light text-gray-200">
+                  <p className="text-lg leading-relaxed">
+                    GEAROQ to projekt, który ma na celu ułatwienie małym biznesom wdrożenia sztucznej inteligencji w ich codziennej działalności. Poprzez integrację Drupala z modelami językowymi AI, oferujemy narzędzia do automatyzacji procesów.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Chcemy dostarczyć rozwiązania, które są proste w użyciu i dostępne cenowo. Wiele funkcji udostępniamy za darmo, zgodnie z duchem open source i ideą dzielenia się w społeczności Drupala. Jednocześnie oferujemy płatne opcje dla zaawansowanych funkcjonalności, które wymagają wykorzystania płatnych modeli AI.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Najważniejsze jest dla nas, aby użytkownicy czerpali realne korzyści z naszych narzędzi—oszczędzali czas, zwiększali efektywność i mogli skupić się na tym, co dla nich kluczowe. Dążymy do stworzenia platformy, która upraszcza procesy biznesowe i czyni technologię AI dostępną dla każdego.
+                  </p>
+                </div>
+
+                <div className="text-center mt-12">
+                  <Link href="/contact" passHref>
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
+                      Napisz do nas
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>

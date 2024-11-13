@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from "next/link"
-import { FaXTwitter, FaYoutube, FaBars, FaXmark } from 'react-icons/fa6';
+import { FaXTwitter, FaYoutube, FaBars, FaXmark, FaLinkedin } from 'react-icons/fa6';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,16 +38,22 @@ const Header = () => {
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
           <Link href="/about" className="text-lg font-medium text-white hover:underline" prefetch={false}>
-            O nas
+            O mnie
           </Link>
-          <Link href="https://twitter.com/youraccount" className="text-white hover:text-blue-400" target="_blank" rel="noopener noreferrer">
+          <Link href="/roadmap" className="text-lg font-medium text-white hover:underline" prefetch={false}>
+            Roadmap
+          </Link>
+          <Link href="https://x.com/bartfilipiuk" className="text-white hover:text-blue-400" target="_blank" rel="noopener noreferrer">
             <FaXTwitter className="h-6 w-6" />
           </Link>
-          <Link href="https://youtube.com/yourchannel" className="text-white hover:text-red-600" target="_blank" rel="noopener noreferrer">
+          <Link href="https://www.youtube.com/@gearoq" className="text-white hover:text-red-600" target="_blank" rel="noopener noreferrer">
             <FaYoutube className="h-6 w-6" />
           </Link>
+          <Link href="https://www.linkedin.com/company/105170469/admin/page-posts/published/" className="text-white hover:text-[#0A66C2]" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="h-6 w-6" />
+          </Link>
           <Link href="/contact" passHref>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white text-lg py-2 px-4 rounded">Napisz do mnie</button>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white text-lg py-2 px-4 rounded">Napisz do nas</button>
           </Link>
         </div>
 
@@ -70,6 +76,9 @@ const Header = () => {
               <Link href="/about" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
                 O nas
               </Link>
+              <Link href="/roadmap" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
+                Roadmapa
+              </Link>
               <Link href="/contact" className="text-lg font-medium text-white hover:text-blue-400" prefetch={false}>
                 Kontakt
               </Link>
@@ -81,6 +90,9 @@ const Header = () => {
                 </Link>
                 <Link href="https://youtube.com/yourchannel" className="text-white hover:text-red-600" target="_blank" rel="noopener noreferrer">
                   <FaYoutube className="h-6 w-6" />
+                </Link>
+                <Link href="https://www.linkedin.com/company/105170469/admin/page-posts/published/" className="text-white hover:text-[#0A66C2]" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin className="h-6 w-6" />
                 </Link>
               </div>
               <Link href="/contact" passHref>
