@@ -83,7 +83,7 @@ export default function Roadmap() {
               <div className="flex items-start justify-between mb-6">
                 <h2 className="text-2xl font-semibold text-blue-400">1. Strona główna projektu - gearoq.com (Landing Page)</h2>
                 <div className="flex flex-col gap-2">
-                  {sectionLinks['section1'].map((link, index) => (
+                  {sectionLinks.section1.map((link, index) => (
                     <a
                       key={index}
                       href={link.url}
@@ -100,7 +100,7 @@ export default function Roadmap() {
               
               <div className="space-y-6">
                 <div className="pl-4 border-l-2 border-blue-500">
-                  <h3 className="text-xl text-white mb-3">Budowa landing page'a</h3>
+                  <h3 className="text-xl text-white mb-3">Budowa landing page&apos;a</h3>
                   <ul className="list-disc list-inside text-gray-300 space-y-2">
                     <li>Wykorzystać Next.js dla szybkiego ładowania i dobrych praktyk SEO</li>
                     <li>Skupić się na prostym, przejrzystym i nowoczesnym wyglądzie</li>
@@ -132,7 +132,7 @@ export default function Roadmap() {
               <div className="flex items-start justify-between mb-6">
                 <h2 className="text-2xl font-semibold text-blue-400">2. Główne API i Platforma - gearoq.pl (Drupal 11)</h2>
                 <div className="flex flex-col gap-2">
-                  {sectionLinks['section2'].map((link, index) => (
+                  {sectionLinks.section2.map((link, index) => (
                     <a
                       key={index}
                       href={link.url}
@@ -171,7 +171,7 @@ export default function Roadmap() {
               <div className="flex items-start justify-between mb-6">
                 <h2 className="text-2xl font-semibold text-blue-400">3. Automatyzacje do wdrożenia jako MVP</h2>
                 <div className="flex flex-col gap-2">
-                  {sectionLinks['section3'].map((link, index) => (
+                  {sectionLinks.section3.map((link, index) => (
                     <a
                       key={index}
                       href={link.url}
