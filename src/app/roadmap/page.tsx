@@ -116,14 +116,6 @@ export default function Roadmap() {
                     <li>Wprowadzić przyciski CTA</li>
                   </ul>
                 </div>
-
-                <div className="pl-4 border-l-2 border-blue-500">
-                  <h3 className="text-xl text-white mb-3">Sekcja dla developerów</h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    <li>Udostępnić zasoby oparte na ddev, Cursor i innych narzędziach</li>
-                    <li>Zapewnić dokumentację i przykłady kodu</li>
-                  </ul>
-                </div>
               </div>
             </div>
 
@@ -161,6 +153,14 @@ export default function Roadmap() {
                   <ul className="list-disc list-inside text-gray-300 space-y-2">
                     <li>Skupić się na minimalizmie</li>
                     <li>Zaprojektować komponenty UI</li>
+                  </ul>
+                </div>
+
+                <div className="pl-4 border-l-2 border-blue-500">
+                  <h3 className="text-xl text-white mb-3">Sekcja dla developerów</h3>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Udostępnić zasoby oparte na ddev, Cursor i innych narzędziach</li>
+                    <li>Zapewnić dokumentację i przykłady kodu</li>
                   </ul>
                 </div>
               </div>
